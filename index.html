@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página UX/UI Animada</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>¡Bienvenido a tu Prueba de Git!</h1>
+    <p>Ejemplo moderno de UX/UI con animaciones y colores atractivos.<br>
+    Modifica y sube los cambios a tu repositorio de Git.</p>
+  </header>
+  <div class="card">
+    <h2>¿Qué puedes hacer?</h2>
+    <ul>
+      <li>Editar este archivo y ver los cambios en tu navegador.</li>
+      <li>Agregar nuevas secciones o estilos.</li>
+      <li>Practicar <b>git add</b>, <b>git commit</b> y <b>git push</b>.</li>
+    </ul>
+    <button class="btn" onclick="alert('¡Listo para practicar Git!')">¡Haz clic y prueba!</button>
+  </div>
+  <footer>
+    Hecho con ❤️ para tus pruebas de Git &mdash; <span id="year"></span>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
