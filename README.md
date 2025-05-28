@@ -23,6 +23,14 @@
   git push 
   git status 
   ```
+# haciendo actualizaciones massivas del codigo `git add .`
+
+ ```bash
+    git add . 
+    git commit -m "commit massivo añade y actualiza"
+    git push 
+    git status 
+  ``` 
 
   # Opciones comunes de Git con `-letra`
 
