@@ -15,6 +15,26 @@
   ```bash
   git status
   ```
+## B. Caso especial donde clonaste un repositorio que ya tenia un reapdme lo cambiaste y te dice que el read me esta modificado pero no a pasado 
+
+ ```bash
+  git add README.md
+  git commit -m "Describe aquí el cambio realizado"
+  ```
+
+  # Opciones comunes de Git con `-letra`
+
+| Opción | Descripción                                               | Ejemplo                                      |
+|--------|-----------------------------------------------------------|----------------------------------------------|
+| -m     | Especifica el mensaje del commit                          | git commit -m "Mensaje del commit"           |
+| -a     | Incluye todos los archivos modificados en el commit       | git commit -a -m "Commit rápido"             |
+| -d     | Elimina una rama                                          | git branch -d nombre-rama                    |
+| -b     | Crea una nueva rama y cambia a ella                       | git checkout -b nueva-rama                   |
+| -u     | Establece upstream (rama de seguimiento remota)           | git push -u origin main                      |
+| -v     | Muestra información detallada (verbose)                   | git status -v                                |
+| -f     | Forzar una acción (por ejemplo, forzar un push o delete)  | git push -f origin main                      |
+
+> Usa `git help <comando>` para ver todas las opciones disponibles para cada comando.
 
 ## 3. Flujo Básico de Trabajo
 
