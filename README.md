@@ -20,6 +20,8 @@
  ```bash
   git add README.md
   git commit -m "Describe aquí el cambio realizado"
+  git push 
+  git status 
   ```
 
   # Opciones comunes de Git con `-letra`
