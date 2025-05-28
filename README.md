@@ -62,7 +62,11 @@
 
 - **Ver historial de commits:**
   ```bash
-  git log --oneline
+  git log --oneline (este esta mucho mas resumido)   
+
+  o tambien
+
+  git log  (esto muestra con mucho mas detalle el historial)
   ```
 
 ## 4. Trabajando con Ramas
@@ -80,10 +84,16 @@
   git commit -m "Cambio en nueva rama"
   ```
 
+  - **Subir la rama creada :**
+   ```bash
+   git push -u origin nueva-rama 
+   ```
+- **:**
+
+
 - **Vuelve a la rama principal y combina los cambios:**
   ```bash
-  git checkout main
-  git merge nueva-rama
+  git merge main (desde la rama donde quieres traer)
   ```
 
 ## 5. Deshacer Cambios
