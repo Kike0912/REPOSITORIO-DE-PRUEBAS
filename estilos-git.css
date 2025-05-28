@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Montserrat:700,400&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+header {
+  margin-top: 40px;
+  text-align: center;
+  animation: slideDown 1s;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  color: #ffb347;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+}
+
+main {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comandos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.comando-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  padding: 1.5rem 2rem;
+  min-width: 260px;
+  max-width: 320px;
+  margin: 0.5rem 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: popIn 1s;
+  border-left: 6px solid #ffb347;
+  position: relative;
+  overflow: hidden;
+}
+
+.comando-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 16px 40px 0 rgba(255,179,71,0.25);
+  border-left: 6px solid #ff512f;
+}
+
+.comando-card h2 {
+  margin-top: 0;
+  color: #ff512f;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.comando-card p {
+  color: #f3e9e9;
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.comando-card code {
+  display: block;
+  background: #232526;
+  color: #ffb347;
+  font-family: 'Fira Mono', monospace;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  transition: background 0.3s;
+  border: 1px solid #ffb34733;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #ff512f 0%, #ffb347 100%);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px 0 rgba(255,81,47,0.18);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  outline: none;
+  margin-bottom: 2.5rem;
+  animation: fadeInBtn 1.5s;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #ffb347 0%, #ff512f 100%);
+  transform: scale(1.07);
+}
+
+@keyframes fadeInBtn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+footer {
+  margin-top: auto;
+  padding: 1.5rem 0;
+  color: #b0c4de;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
+  background: rgba(35,37,38,0.2);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  animation: fadeIn 2s;
+}
+
+@media (max-width: 900px) {
+  .comandos {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .comando-card {
+    max-width: 95vw;
+    min-width: 220px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}

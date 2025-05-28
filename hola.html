@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comandos Esenciales de Git - UX/UI Animado</title>
+  <link rel="stylesheet" href="estilos-git.css">
+</head>
+<body>
+  <header>
+    <h1>Comandos Esenciales de Git</h1>
+    <p>Aprende y practica los comandos más importantes de Git con una experiencia visual moderna y animada.</p>
+  </header>
+  <main>
+    <section class="comandos">
+      <div class="comando-card">
+        <h2>git status</h2>
+        <p>Muestra el estado actual del repositorio, archivos modificados y cambios pendientes.</p>
+        <code>git status</code>
+      </div>
+      <div class="comando-card">
+        <h2>git add</h2>
+        <p>Agrega archivos al área de staging para prepararlos para el commit.</p>
+        <code>git add nombre-archivo</code>
+      </div>
+      <div class="comando-card">
+        <h2>git commit</h2>
+        <p>Guarda los cambios agregados en el historial del repositorio.</p>
+        <code>git commit -m "Mensaje descriptivo"</code>
+      </div>
+      <div class="comando-card">
+        <h2>git push</h2>
+        <p>Envía tus commits locales al repositorio remoto (por ejemplo, GitHub).</p>
+        <code>git push origin main</code>
+      </div>
+      <div class="comando-card">
+        <h2>git pull</h2>
+        <p>Descarga y fusiona los cambios del repositorio remoto a tu rama actual.</p>
+        <code>git pull origin main</code>
+      </div>
+      <div class="comando-card">
+        <h2>git branch</h2>
+        <p>Lista, crea o elimina ramas en tu repositorio.</p>
+        <code>git branch nombre-rama</code>
+      </div>
+      <div class="comando-card">
+        <h2>git checkout</h2>
+        <p>Cambia de rama o restaura archivos.</p>
+        <code>git checkout nombre-rama</code>
+      </div>
+    </section>
+    <button class="btn" onclick="alert('¡Sigue practicando tus comandos de Git!')">¡Practica ahora!</button>
+  </main>
+  <footer>
+    <span>Hecho con 💻 por tu guía de Git — <span id="year"></span></span>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
