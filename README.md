@@ -1,6 +1,7 @@
 # Guía de Pruebas y Comandos Básicos de Git (Repositorio Clonado)
 
 Hice un cambio xd 
+hice un segundo cambio 
 ## 1. Verifica la Configuración
 
 - **Verifica tu nombre y correo configurados:**
