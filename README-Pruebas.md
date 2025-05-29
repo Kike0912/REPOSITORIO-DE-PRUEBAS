@@ -1,4 +1,10 @@
 
+
+si elimine por error sin commit 
+
+git restore --staged .
+git restore . 
+
 A continuación encontrarás una lista de 30 retos diseñados para poner a prueba y fortalecer tus conocimientos en Git. Cada reto plantea una situación o tarea específica que deberás resolver utilizando comandos y buenas prácticas de Git. No se incluyen soluciones, solo la descripción de cada reto para que puedas investigar y aplicar lo aprendido.
 
 4. **Crea una nueva rama**  
