@@ -3,50 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Comandos Esenciales de Git - UX/UI Animado</title>
+  <title>Guía de Acciones y Comandos Git</title>
   <link rel="stylesheet" href="estilos-git.css">
+  <style>
+    .categorias {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .cat-btn {
+      background: linear-gradient(90deg, #ff512f 0%, #ffb347 100%);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .cat-btn.active, .cat-btn:hover {
+      background: linear-gradient(90deg, #ffb347 0%, #ff512f 100%);
+      transform: scale(1.07);
+    }
+    .comando-card { display: none; }
+    .comando-card.visible { display: block; }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Comandos Esenciales de Git</h1>
-    <p>Aprende y practica los comandos más importantes de Git con una experiencia visual moderna y animada.</p>
+    <h1>Guía de Acciones y Comandos Git</h1>
+    <p>Selecciona una categoría para ver los comandos y acciones de Git ordenados de lo más básico a lo más avanzado.</p>
   </header>
   <main>
+    <div class="categorias">
+      <button class="cat-btn active" onclick="mostrarCategoria('basico', this)">Básico</button>
+      <button class="cat-btn" onclick="mostrarCategoria('ramas', this)">Ramas</button>
+      <button class="cat-btn" onclick="mostrarCategoria('remoto', this)">Remoto</button>
+      <button class="cat-btn" onclick="mostrarCategoria('fusion', this)">Fusión</button>
+      <button class="cat-btn" onclick="mostrarCategoria('recuperacion', this)">Recuperación</button>
+    </div>
     <section class="comandos">
-      <div class="comando-card">
-        <h2>git status</h2>
-        <p>Muestra el estado actual del repositorio, archivos modificados y cambios pendientes.</p>
+      <!-- Básico -->
+      <div class="comando-card basico visible">
+        <h2>1. Ver el estado del repositorio</h2>
+        <p><b>Descripción:</b> Consulta los archivos modificados, agregados o eliminados.</p>
         <code>git status</code>
       </div>
-      <div class="comando-card">
-        <h2>git add</h2>
-        <p>Agrega archivos al área de staging para prepararlos para el commit.</p>
-        <code>git add nombre-archivo</code>
-      </div>
-      <div class="comando-card">
-        <h2>git commit</h2>
-        <p>Guarda los cambios agregados en el historial del repositorio.</p>
+      <div class="comando-card basico visible">
+        <h2>2. Agregar y confirmar cambios</h2>
+        <p><b>Descripción:</b> Prepara los archivos y guarda los cambios en el historial.</p>
+        <code>git add .</code><br>
         <code>git commit -m "Mensaje descriptivo"</code>
       </div>
-      <div class="comando-card">
-        <h2>git push</h2>
-        <p>Envía tus commits locales al repositorio remoto (por ejemplo, GitHub).</p>
+      <!-- Ramas -->
+      <div class="comando-card ramas">
+        <h2>3. Crear una nueva rama y subirla al remoto</h2>
+        <p><b>Descripción:</b> Crea una rama a partir de la principal y súbela a GitHub.</p>
+        <code>git branch nombre-nueva-rama</code><br>
+        <code>git checkout nombre-nueva-rama</code><br>
+        <code>git push origin nombre-nueva-rama</code>
+      </div>
+      <div class="comando-card ramas">
+        <h2>4. Eliminar una rama remota</h2>
+        <p><b>Descripción:</b> Borra una rama del repositorio remoto (GitHub).</p>
+        <code>git push origin --delete nombre-de-la-rama</code>
+      </div>
+      <!-- Remoto -->
+      <div class="comando-card remoto">
+        <h2>5. Subir cambios al repositorio remoto</h2>
+        <p><b>Descripción:</b> Envía tus commits locales a GitHub.</p>
+        <code>git push origin nombre-de-la-rama</code>
+      </div>
+      <div class="comando-card remoto">
+        <h2>6. Traer cambios del remoto</h2>
+        <p><b>Descripción:</b> Descarga y fusiona los cambios del repositorio remoto a tu rama actual.</p>
+        <code>git pull origin nombre-de-la-rama</code>
+      </div>
+      <!-- Fusión -->
+      <div class="comando-card fusion">
+        <h2>7. Fusionar cambios de una rama a main (sin conflicto)</h2>
+        <p><b>Descripción:</b> Integra los cambios de una rama secundaria a la rama principal.</p>
+        <code>git checkout main</code><br>
+        <code>git pull origin main</code><br>
+        <code>git merge nombre-de-la-rama</code><br>
         <code>git push origin main</code>
       </div>
-      <div class="comando-card">
-        <h2>git pull</h2>
-        <p>Descarga y fusiona los cambios del repositorio remoto a tu rama actual.</p>
-        <code>git pull origin main</code>
+      <div class="comando-card fusion">
+        <h2>8. Fusionar ramas con conflicto</h2>
+        <p><b>Descripción:</b> Si hay conflictos al fusionar, resuélvelos y termina el proceso.</p>
+        <code>git checkout main</code><br>
+        <code>git merge nombre-de-la-rama</code><br>
+        <span>Resuelve los conflictos en los archivos afectados.</span><br>
+        <code>git add .</code><br>
+        <code>git commit -m "Resuelve conflictos de merge"</code><br>
+        <code>git push origin main</code>
       </div>
-      <div class="comando-card">
-        <h2>git branch</h2>
-        <p>Lista, crea o elimina ramas en tu repositorio.</p>
-        <code>git branch nombre-rama</code>
-      </div>
-      <div class="comando-card">
-        <h2>git checkout</h2>
-        <p>Cambia de rama o restaura archivos.</p>
-        <code>git checkout nombre-rama</code>
+      <!-- Recuperación -->
+      <div class="comando-card recuperacion">
+        <h2>9. Recuperar archivos eliminados por error (sin commit)</h2>
+        <p><b>Descripción:</b> Si eliminaste archivos accidentalmente antes de hacer commit, puedes restaurarlos fácilmente.</p>
+        <code>git restore --staged .</code><br>
+        <code>git restore .</code>
       </div>
     </section>
     <button class="btn" onclick="alert('¡Sigue practicando tus comandos de Git!')">¡Practica ahora!</button>
@@ -55,6 +115,16 @@
     <span>Hecho con 💻 por tu guía de Git — <span id="year"></span></span>
   </footer>
   <script>
+    // Mostrar solo la categoría seleccionada
+    function mostrarCategoria(cat, btn) {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.comando-card').forEach(card => {
+        card.classList.remove('visible');
+        if (card.classList.contains(cat)) card.classList.add('visible');
+      });
+    }
+    // Mostrar todos los básicos al cargar
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>

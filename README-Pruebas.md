@@ -38,8 +38,6 @@ git push origin -delete (nombre de la rama)
      git commit -m "mensaje"
      git push origin (rama actual)
 
-6. **Resuelve un conflicto de fusión**  
-    Provoca y resuelve un conflicto de merge entre dos ramas.
 
 7. **Utiliza etiquetas (tags)**  
     Crea una etiqueta para marcar una versión importante del proyecto.
