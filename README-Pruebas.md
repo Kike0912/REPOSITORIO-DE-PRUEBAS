@@ -22,6 +22,22 @@ git push origin -delete (nombre de la rama)
 5. **Fusiona ramas**  
     Realiza cambios en la nueva rama y luego fusiónalos en la rama principal.
 
+
+    se hacen cambio en una rama y en otra no ( sin conflicto )
+
+    git checkout (rama sin cambio )
+    git merge (rama de la que me quiero traer los cambios )
+    git add . 
+    git commit -m "mensaje "
+    git push origin (nombre de la rama )
+
+     se hacen cambio en una rama y la otra rama no tiene lo mismo (conflicto)
+
+     resuelve en visual los conflictos 
+     -git add . 
+     git commit -m "mensaje"
+     git push origin (rama actual)
+
 6. **Resuelve un conflicto de fusión**  
     Provoca y resuelve un conflicto de merge entre dos ramas.
 
