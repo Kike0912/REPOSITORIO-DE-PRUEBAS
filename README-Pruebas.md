@@ -10,6 +10,15 @@ A continuación encontrarás una lista de 30 retos diseñados para poner a prueb
 4. **Crea una nueva rama**  
     Genera una rama a partir de la rama principal y cambia a ella.
 
+git branch (nombre de la nueva rama )
+git push origin nombre de la nueva rama 
+
+
+eliminar rama 
+
+git push origin -delete (nombre de la rama)
+
+
 5. **Fusiona ramas**  
     Realiza cambios en la nueva rama y luego fusiónalos en la rama principal.
 
