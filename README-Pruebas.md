@@ -42,8 +42,31 @@ git push origin -delete (nombre de la rama)
 7. **Utiliza etiquetas (tags)**  
     Crea una etiqueta para marcar una versión importante del proyecto.
 
+
+    te posicionas en la rama de tu proyecto o donde quieras hacer la etiqueta 
+    git tag (nombre de la etiqueta)
+    git tag 
+    git push origin (rama actual)
+
+
 8. **Deshaz un commit**  
     Realiza un commit erróneo y luego deshazlo correctamente.
+
+    Caso práctico:
+Hiciste un commit con un mensaje incorrecto o con archivos que no querías incluir.
+
+Comandos:
+
+Deshacer el último commit pero mantener los cambios en el área de trabajo:
+
+git reset --soft HEAD~1
+
+Deshacer el último commit y los cambios (eliminarlo
+git reset --hard HEAD~1
+
+vertir un commit (crea un nuevo commit que deshace el anterior, recomendado si ya lo subiste al remoto):
+
+git revert HEAD
 
 9. **Reescribe el historial de commits**  
     Modifica el mensaje de un commit anterior usando rebase interactivo.

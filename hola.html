@@ -40,13 +40,14 @@
   <main>
     <div class="categorias">
       <button class="cat-btn active" onclick="mostrarCategoria('basico', this)">Básico</button>
-      <button class="cat-btn" onclick="mostrarCategoria('ramas', this)">Ramas</button>
-      <button class="cat-btn" onclick="mostrarCategoria('remoto', this)">Remoto</button>
-      <button class="cat-btn" onclick="mostrarCategoria('fusion', this)">Fusión</button>
-      <button class="cat-btn" onclick="mostrarCategoria('recuperacion', this)">Recuperación</button>
+      <button class="cat-btn" onclick="mostrarCategoria('subir', this)">Subir</button>
+      <button class="cat-btn" onclick="mostrarCategoria('revertir', this)">Revertir</button>
+      <button class="cat-btn" onclick="mostrarCategoria('fusionar', this)">Fusionar</button>
+      <button class="cat-btn" onclick="mostrarCategoria('eliminar', this)">Eliminar</button>
+      <button class="cat-btn" onclick="mostrarCategoria('otros', this)">Otros</button>
     </div>
     <section class="comandos">
-      <!-- Básico -->
+      <!-- BASICO -->
       <div class="comando-card basico visible">
         <h2>1. Ver el estado del repositorio</h2>
         <p><b>Descripción:</b> Consulta los archivos modificados, agregados o eliminados.</p>
@@ -58,32 +59,42 @@
         <code>git add .</code><br>
         <code>git commit -m "Mensaje descriptivo"</code>
       </div>
-      <!-- Ramas -->
-      <div class="comando-card ramas">
-        <h2>3. Crear una nueva rama y subirla al remoto</h2>
-        <p><b>Descripción:</b> Crea una rama a partir de la principal y súbela a GitHub.</p>
-        <code>git branch nombre-nueva-rama</code><br>
-        <code>git checkout nombre-nueva-rama</code><br>
-        <code>git push origin nombre-nueva-rama</code>
-      </div>
-      <div class="comando-card ramas">
-        <h2>4. Eliminar una rama remota</h2>
-        <p><b>Descripción:</b> Borra una rama del repositorio remoto (GitHub).</p>
-        <code>git push origin --delete nombre-de-la-rama</code>
-      </div>
-      <!-- Remoto -->
-      <div class="comando-card remoto">
-        <h2>5. Subir cambios al repositorio remoto</h2>
+      <!-- SUBIR -->
+      <div class="comando-card subir">
+        <h2>3. Subir cambios al repositorio remoto</h2>
         <p><b>Descripción:</b> Envía tus commits locales a GitHub.</p>
         <code>git push origin nombre-de-la-rama</code>
       </div>
-      <div class="comando-card remoto">
-        <h2>6. Traer cambios del remoto</h2>
+      <div class="comando-card subir">
+        <h2>4. Traer cambios del remoto</h2>
         <p><b>Descripción:</b> Descarga y fusiona los cambios del repositorio remoto a tu rama actual.</p>
         <code>git pull origin nombre-de-la-rama</code>
       </div>
-      <!-- Fusión -->
-      <div class="comando-card fusion">
+      <!-- REVERTIR -->
+      <div class="comando-card revertir">
+        <h2>5. Recuperar archivos eliminados por error (sin commit)</h2>
+        <p><b>Descripción:</b> Si eliminaste archivos accidentalmente antes de hacer commit, puedes restaurarlos fácilmente.</p>
+        <code>git restore --staged .</code><br>
+        <code>git restore .</code>
+      </div>
+      <div class="comando-card revertir">
+        <h2>6. Deshacer un commit</h2>
+        <p><b>Descripción:</b> Corrige un commit erróneo según tu necesidad.</p>
+        <ul>
+          <li><b>Deshacer el último commit pero mantener los cambios en el área de trabajo:</b><br>
+            <code>git reset --soft HEAD~1</code>
+          </li>
+          <li><b>Deshacer el último commit y los cambios (eliminarlos):</b><br>
+            <code>git reset --hard HEAD~1</code>
+          </li>
+          <li><b>Revertir un commit (crea un nuevo commit que deshace el anterior, recomendado si ya lo subiste al remoto):</b><br>
+            <code>git revert HEAD</code>
+          </li>
+        </ul>
+        <p><b>Caso práctico:</b> Hiciste un commit con un mensaje incorrecto o con archivos que no querías incluir. Usa el comando adecuado según tu situación.</p>
+      </div>
+      <!-- FUSIONAR -->
+      <div class="comando-card fusionar">
         <h2>7. Fusionar cambios de una rama a main (sin conflicto)</h2>
         <p><b>Descripción:</b> Integra los cambios de una rama secundaria a la rama principal.</p>
         <code>git checkout main</code><br>
@@ -91,7 +102,7 @@
         <code>git merge nombre-de-la-rama</code><br>
         <code>git push origin main</code>
       </div>
-      <div class="comando-card fusion">
+      <div class="comando-card fusionar">
         <h2>8. Fusionar ramas con conflicto</h2>
         <p><b>Descripción:</b> Si hay conflictos al fusionar, resuélvelos y termina el proceso.</p>
         <code>git checkout main</code><br>
@@ -101,12 +112,35 @@
         <code>git commit -m "Resuelve conflictos de merge"</code><br>
         <code>git push origin main</code>
       </div>
-      <!-- Recuperación -->
-      <div class="comando-card recuperacion">
-        <h2>9. Recuperar archivos eliminados por error (sin commit)</h2>
-        <p><b>Descripción:</b> Si eliminaste archivos accidentalmente antes de hacer commit, puedes restaurarlos fácilmente.</p>
-        <code>git restore --staged .</code><br>
-        <code>git restore .</code>
+      <!-- ELIMINAR -->
+      <div class="comando-card eliminar">
+        <h2>9. Eliminar una rama remota</h2>
+        <p><b>Descripción:</b> Borra una rama del repositorio remoto (GitHub).</p>
+        <code>git push origin --delete nombre-de-la-rama</code>
+      </div>
+      <!-- OTROS -->
+      <div class="comando-card otros">
+        <h2>10. Crear una nueva rama y subirla al remoto</h2>
+        <p><b>Descripción:</b> Crea una rama a partir de la principal y súbela a GitHub.</p>
+        <code>git branch nombre-nueva-rama</code><br>
+        <code>git checkout nombre-nueva-rama</code><br>
+        <code>git push origin nombre-nueva-rama</code>
+      </div>
+      <div class="comando-card otros">
+        <h2>11. Utilizar etiquetas (tags)</h2>
+        <p><b>Descripción:</b> Marca una versión importante del proyecto con una etiqueta.</p>
+        <span>Ponte en la rama donde quieras crear la etiqueta:</span><br>
+        <code>git tag nombre-de-la-etiqueta</code><br>
+        <span>Ver todas las etiquetas:</span><br>
+        <code>git tag</code><br>
+        <span>Subir la etiqueta al remoto:</span><br>
+        <code>git push origin nombre-de-la-etiqueta</code>
+      </div>
+      <div class="comando-card otros">
+        <h2>¿Qué es la sección "Otros"?</h2>
+        <p>
+          Aquí encontrarás comandos y acciones útiles que no encajan exactamente en las categorías anteriores, como el uso de etiquetas, creación de ramas, o cualquier otro tip avanzado de Git.
+        </p>
       </div>
     </section>
     <button class="btn" onclick="alert('¡Sigue practicando tus comandos de Git!')">¡Practica ahora!</button>
