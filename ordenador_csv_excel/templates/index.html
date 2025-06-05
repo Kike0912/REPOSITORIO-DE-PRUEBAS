@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CSV a Excel Bonito</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Convertidor de CSV a Excel</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".csv" required>
+      <button type="submit">Convertir</button>
+    </form>
+    {% if excel_file %}
+      <p>¡Archivo convertido! 👉 <a href="{{ url_for('download', filename=excel_file) }}">Descargar Excel</a></p>
+    {% endif %}
+  </div>
+</body>
+</html>
